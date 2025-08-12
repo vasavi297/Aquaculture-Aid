@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Index — Aquaculture Aid</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">AQ</div>
+        <div>
+          <div style="font-size:15px">Aquaculture Aid</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:2px">Community • Solutions • Resources</div>
+        </div>
+      </div>
+
+      
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="problems.html">Problems</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    
+
+      <div class="search">
+        <input id="searchInput" placeholder="Search topics, e.g. water quality" />
+        <button class="cta" id="searchBtn">Search</button>
+      </div>
+    </div>
+  </header>
+
+<main class="container">
+<section id="home" class="hero">
+      <div class="hero-left">
+        <h1>Empowering Aquaculture Farmers for a Better Tomorrow</h1>
+        <p>Practical, low-cost and community-tested solutions to the challenges facing small and medium fish farmers.</p>
+        <div class="hero-actions">
+          <button class="btn-outline" onclick="scrollToSection('problems')">View Problems & Solutions</button>
+          <button class="cta" onclick="openJoin()">Join Our Community</button>
+        </div>
+
+        <div style="margin-top:22px;display:flex;gap:12px">
+          <div class="hero-card">
+            <div style="width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg,var(--blue),var(--green));color:white;display:grid;place-items:center">✓</div>
+            <div>
+              <div style="font-weight:700">100+ Verified Tips</div>
+              <div style="font-size:13px;color:var(--muted)">From farmers and experts</div>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <div style="width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg,#ffd36b,#ffb66b);display:grid;place-items:center">💡</div>
+            <div>
+              <div style="font-weight:700">Practical Solutions</div>
+              <div style="font-size:13px;color:var(--muted)">Field-tested and low-cost</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-right">
+        <div style="font-weight:700;margin-bottom:8px">Quick Links</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <a href="#resources" style="text-decoration:none;color:var(--deep);">Government Subsidies & Schemes</a>
+          <a href="#community" style="text-decoration:none;color:var(--deep);">Success Stories</a>
+          <a href="#contact" style="text-decoration:none;color:var(--deep);">Contact Local Extension</a>
+        </div>
+      </aside>
+    </section>
+</main>
+
+<footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:18px;align-items:center">
+      <div>
+        <div style="font-weight:700">Aquaculture Aid</div>
+        <div style="color:rgba(255,255,255,0.85);font-size:13px;margin-top:6px">Helping farmers with practical solutions.</div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+<!-- Join modal -->
+<div id="joinModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <strong>Join Aquaculture Community</strong>
+      <button class="close-btn" onclick="closeJoin()">✕</button>
+    </div>
+    <p style="margin:0 0 12px;color:var(--muted)">Sign up to ask questions, post experiences, and get local help.</p>
+    <input id="joinName" placeholder="Your name" />
+    <input id="joinEmail" placeholder="Email address" />
+    <button class="cta" style="width:100%" onclick="submitJoin()">Join Now</button>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

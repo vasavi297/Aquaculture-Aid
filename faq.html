@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Faq — Aquaculture Aid</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">AQ</div>
+        <div>
+          <div style="font-size:15px">Aquaculture Aid</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:2px">Community • Solutions • Resources</div>
+        </div>
+      </div>
+
+      
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="problems.html">Problems</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    
+
+      <div class="search">
+        <input id="searchInput" placeholder="Search topics, e.g. water quality" />
+        <button class="cta" id="searchBtn">Search</button>
+      </div>
+    </div>
+  </header>
+
+<main class="container">
+<section id="faq">
+      <div class="section-head">
+        <h2>FAQs</h2>
+        <div class="small">Common questions from farmers</div>
+      </div>
+
+      <div class="acc" id="faqAcc">
+        <div class="acc-item">
+          <div class="acc-header" data-index="0"><div><strong>How do I test pond water quality cheaply?</strong></div><div class="small">▸</div></div>
+          <div class="acc-body"><p>Use low-cost test strips for ammonia, nitrite and pH. Perform weekly checks and aerate if values are outside recommended ranges. Reach out to your local extension officer for lab testing.</p></div>
+        </div>
+
+        <div class="acc-item">
+          <div class="acc-header" data-index="1"><div><strong>Which feeds give good growth at low cost?</strong></div><div class="small">▸</div></div>
+          <div class="acc-body"><p>Look for feeds with the right protein percentage for the species. Consider mixing local protein sources to cut cost — but always aim for balanced nutrition.</p></div>
+        </div>
+
+        <div class="acc-item">
+          <div class="acc-header" data-index="2"><div><strong>How can I access financial aid?</strong></div><div class="small">▸</div></div>
+          <div class="acc-body"><p>Check the Resources section for official links to government schemes. Prepare a simple project plan and visit the nearest fisheries office for application support.</p></div>
+        </div>
+      </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:18px;align-items:center">
+      <div>
+        <div style="font-weight:700">Aquaculture Aid</div>
+        <div style="color:rgba(255,255,255,0.85);font-size:13px;margin-top:6px">Helping farmers with practical solutions.</div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+<!-- Join modal -->
+<div id="joinModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <strong>Join Aquaculture Community</strong>
+      <button class="close-btn" onclick="closeJoin()">✕</button>
+    </div>
+    <p style="margin:0 0 12px;color:var(--muted)">Sign up to ask questions, post experiences, and get local help.</p>
+    <input id="joinName" placeholder="Your name" />
+    <input id="joinEmail" placeholder="Email address" />
+    <button class="cta" style="width:100%" onclick="submitJoin()">Join Now</button>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

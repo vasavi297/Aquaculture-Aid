@@ -1,0 +1,138 @@
+:root{
+      --blue:#0b76d1;
+      --deep:#04395e;
+      --green:#33a17a;
+      --muted:#6b7b86;
+      --card:#f7fbfd;
+      --glass: rgba(255,255,255,0.6);
+      --max:1100px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;color:#113;line-height:1.45;background:linear-gradient(180deg,#e9f6fb 0%, #fbfcfe 100%);}
+    header{backdrop-filter: blur(6px);position:sticky;top:0;z-index:40;background:linear-gradient(180deg,rgba(255,255,255,0.6),rgba(255,255,255,0.45));box-shadow:0 6px 18px rgba(10,30,50,0.06)}
+    .container{width:92%;max-width:var(--max);margin:0 auto}
+
+    /* NAV */
+    .nav{display:flex;align-items:center;gap:18px;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--deep)}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--blue),var(--green));display:grid;place-items:center;color:white;font-weight:800;font-size:20px}
+    nav ul{display:flex;gap:18px;margin:0;padding:0;list-style:none;align-items:center}
+    nav a{color:var(--deep);text-decoration:none;padding:6px 10px;border-radius:8px;font-weight:600}
+    nav a:hover{background:var(--card)}
+    .search{margin-left:auto;display:flex;gap:8px;align-items:center}
+    .search input{padding:8px 12px;border-radius:999px;border:1px solid rgba(10,30,50,0.08);width:220px}
+    .cta{background:var(--blue);color:white;padding:8px 12px;border-radius:10px;border:none;font-weight:700}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:56px 0}
+    .hero-left h1{font-size:36px;margin:0 0 14px;color:var(--deep)}
+    .hero-left p{color:var(--muted);margin:0 0 18px}
+    .hero-actions{display:flex;gap:12px}
+    .btn-outline{background:transparent;border:2px solid var(--blue);color:var(--blue);padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer}
+    .hero-right{background:linear-gradient(180deg,rgba(11,118,209,0.06),rgba(51,161,122,0.04));padding:18px;border-radius:14px}
+    .hero-card{background:white;border-radius:10px;padding:14px;display:flex;gap:12px;align-items:center;box-shadow:0 6px 20px rgba(15,60,100,0.05)}
+
+    /* Section headings */
+    section{padding:28px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:18px}
+    .section-head h2{margin:0;color:var(--deep)}
+    .small{color:var(--muted);font-size:14px}
+
+    /* Problems & Solutions cards */
+    .ps-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .ps-card{display:flex;gap:12px;background:var(--card);padding:14px;border-radius:12px;border:1px solid rgba(10,30,50,0.03);cursor:pointer;user-select:none;}
+    .ps-icon{width:56px;height:56px;border-radius:10px;display:grid;place-items:center;font-weight:800;font-size:24px;line-height:1}
+    .problem .ps-icon{background:linear-gradient(135deg,#ffd9d9,#ffeef0);color:#9b1a1a}
+    .solution .ps-icon{background:linear-gradient(135deg,#e9fff3,#e6fbf5);color:#0b6b3f}
+    .ps-title{font-weight:700;margin:0 0 8px;line-height:1.1;font-size:18px;}
+    .ps-desc{color:var(--muted);font-size:14px;white-space: pre-line;}
+    .quick-links{margin-top:12px; font-size:13px; color: var(--deep);}
+    .quick-links a{
+      display:inline-block;
+      margin-right:12px;
+      color: var(--blue);
+      text-decoration:none;
+      border-bottom:1px dotted var(--blue);
+    }
+    .quick-links a:hover{
+      color: var(--green);
+      border-color: var(--green);
+    }
+
+    /* resources */
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .card{background:white;padding:14px;border-radius:12px;border:1px solid rgba(10,30,50,0.04)}
+    .card h3{margin:0 0 8px}
+    .card p{margin:0 0 12px;color:var(--muted);font-size:14px}
+    .card a{display:inline-block;padding:8px 12px;border-radius:10px;background:transparent;border:1px solid rgba(10,30,50,0.06);text-decoration:none;cursor:pointer;}
+
+    /* Community */
+    .community{display:grid;grid-template-columns:1fr 340px;gap:18px}
+    .story{background:white;padding:14px;border-radius:12px}
+    .testimonial{background:linear-gradient(90deg,#fff,#f7fbff);padding:12px;border-radius:10px}
+
+    footer{background:var(--deep);color:white;padding:18px 0;border-top-left-radius:20px;margin-top:18px}
+    footer a{color:rgba(255,255,255,0.9);text-decoration:none}
+
+    /* responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .ps-grid{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr}
+      .community{grid-template-columns:1fr}
+      nav ul{display:none}
+      .search input{width:120px}
+    }
+
+    /* small interactions */
+    .ps-card:hover{transform:translateY(-6px);transition:all .24s ease}
+    .btn{cursor:pointer}
+
+    /* accordion */
+    .acc{background:white;border-radius:12px;border:1px solid rgba(10,30,50,0.04);overflow:hidden}
+    .acc-item+ .acc-item{border-top:1px solid rgba(10,30,50,0.04)}
+    .acc-header{display:flex;justify-content:space-between;padding:12px 14px;align-items:center;cursor:pointer;user-select:none}
+    .acc-body{padding:0 14px 14px;max-height:0;overflow:hidden;transition:max-height .28s ease}
+    .acc-open .acc-body{max-height:420px}
+
+    /* modal */
+    #joinModal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(5,10,20,0.45);
+      z-index: 80;
+    }
+    #joinModal .modal-content {
+      width: 92%;
+      max-width: 420px;
+      background: white;
+      border-radius: 12px;
+      padding: 18px;
+      box-sizing: border-box;
+    }
+    #joinModal .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    #joinModal input {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(10,30,50,0.06);
+      margin-bottom: 14px;
+      font-size: 15px;
+      box-sizing: border-box;
+    }
+    #joinModal button.close-btn {
+      border: none;
+      background: transparent;
+      font-size: 22px;
+      cursor: pointer;
+      color: var(--muted);
+    }

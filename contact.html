@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Aquaculture Aid</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">AQ</div>
+        <div>
+          <div style="font-size:15px">Aquaculture Aid</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:2px">Community • Solutions • Resources</div>
+        </div>
+      </div>
+
+      
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="problems.html">Problems</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    
+
+      <div class="search">
+        <input id="searchInput" placeholder="Search topics, e.g. water quality" />
+        <button class="cta" id="searchBtn">Search</button>
+      </div>
+    </div>
+  </header>
+
+<main class="container">
+
+<section id="contact">
+  <div class="section-head">
+    <h2>Contact Us</h2>
+    <div class="small">We’d love to hear from you</div>
+  </div>
+  <p>Email: support@aquacultureaid.org</p>
+  <p>Phone: +91 98765 43210</p>
+  <p>Address: 123 Aquaculture Street, Coastal City</p>
+</section>
+
+</main>
+
+<footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:18px;align-items:center">
+      <div>
+        <div style="font-weight:700">Aquaculture Aid</div>
+        <div style="color:rgba(255,255,255,0.85);font-size:13px;margin-top:6px">Helping farmers with practical solutions.</div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+<!-- Join modal -->
+<div id="joinModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <strong>Join Aquaculture Community</strong>
+      <button class="close-btn" onclick="closeJoin()">✕</button>
+    </div>
+    <p style="margin:0 0 12px;color:var(--muted)">Sign up to ask questions, post experiences, and get local help.</p>
+    <input id="joinName" placeholder="Your name" />
+    <input id="joinEmail" placeholder="Email address" />
+    <button class="cta" style="width:100%" onclick="submitJoin()">Join Now</button>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

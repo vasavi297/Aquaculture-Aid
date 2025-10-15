@@ -1,97 +1,189 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Faq — Aquaculture Aid</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQ — Aquaculture Aid</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header>
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo">AQ</div>
-        <div>
-          <div style="font-size:15px">Aquaculture Aid</div>
-          <div style="font-size:12px;color:var(--muted);margin-top:2px">Community • Solutions • Resources</div>
+  <header>
+      <div class="container nav">
+        <div class="brand">
+          <div class="logo">AA</div>
+          <div>
+            <div style="font-size: 15px">Aquaculture Aid</div>
+            <div style="font-size: 12px; color: var(--muted); margin-top: 2px">
+              Community • Solutions • Resources
+            </div>
+          </div>
+        </div>
+
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="problems.html">Problems</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="search">
+          <input
+            id="searchInput"
+            placeholder="Search Problems, e.g. Governement schemes"
+          />
+          <button class="cta" id="searchBtn">Search</button>
         </div>
       </div>
+    </header>
 
-      
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="problems.html">Problems</a></li>
-          <li><a href="resources.html">Resources</a></li>
-          <li><a href="community.html">Community</a></li>
-          <li><a href="faq.html">FAQs</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    
-
-      <div class="search">
-        <input id="searchInput" placeholder="Search topics, e.g. water quality" />
-        <button class="cta" id="searchBtn">Search</button>
-      </div>
-    </div>
-  </header>
-
-<main class="container">
-<section id="faq">
+  <!-- Main -->
+  <main class="container">
+    <section id="faq">
       <div class="section-head">
         <h2>FAQs</h2>
-        <div class="small">Common questions from farmers</div>
+        <div class="small">Common questions from Users</div>
       </div>
 
       <div class="acc" id="faqAcc">
+
         <div class="acc-item">
-          <div class="acc-header" data-index="0"><div><strong>How do I test pond water quality cheaply?</strong></div><div class="small">▸</div></div>
-          <div class="acc-body"><p>Use low-cost test strips for ammonia, nitrite and pH. Perform weekly checks and aerate if values are outside recommended ranges. Reach out to your local extension officer for lab testing.</p></div>
+          <div class="acc-header" data-index="0">
+            <div><strong>What is Aquaculture Aid?</strong></div>
+            <div class="small">▸</div>
+          </div>
+          <div class="acc-body">
+            <p>Aquaculture Aid is a platform designed to help fish farmers and aquaculture practitioners access resources, community discussions, solutions, and support for common problems in aquaculture.</p>
+          </div>
         </div>
 
         <div class="acc-item">
-          <div class="acc-header" data-index="1"><div><strong>Which feeds give good growth at low cost?</strong></div><div class="small">▸</div></div>
-          <div class="acc-body"><p>Look for feeds with the right protein percentage for the species. Consider mixing local protein sources to cut cost — but always aim for balanced nutrition.</p></div>
+          <div class="acc-header" data-index="1">
+            <div><strong>Who can use Aquaculture Aid?</strong></div>
+            <div class="small">▸</div>
+          </div>
+          <div class="acc-body">
+            <p>The platform is open to:</p>
+            <ul>
+              <li>Fish farmers</li>
+              <li>Aquaculture professionals</li>
+              <li>Students and researchers</li>
+              <li>NGOs & policy makers</li>
+              <li>Anyone interested in sustainable aquaculture</li>
+            </ul>
+          </div>
         </div>
 
         <div class="acc-item">
-          <div class="acc-header" data-index="2"><div><strong>How can I access financial aid?</strong></div><div class="small">▸</div></div>
-          <div class="acc-body"><p>Check the Resources section for official links to government schemes. Prepare a simple project plan and visit the nearest fisheries office for application support.</p></div>
+          <div class="acc-header" data-index="2">
+            <div><strong>How does the problem search work?</strong></div>
+            <div class="small">▸</div>
+          </div>
+          <div class="acc-body">
+            <p>You can search for problems like “disease,” “climate change,” “training,” “finance,” or “market”, etc. Even if you type wrong spellings or alternatives, the search engine will highlight the closest relevant problem card. For example, typing “climete” will still take you to Climate Change problems.</p>
+          </div>
         </div>
+
+        <div class="acc-item">
+          <div class="acc-header" data-index="3">
+            <div><strong>Can I contribute solutions?</strong></div>
+            <div class="small">▸</div>
+          </div>
+          <div class="acc-body">
+            <p>Yes! Our community feature allows users to share solutions, tips, and experiences. Farmers helping farmers is the goal of Aquaculture Aid.</p>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <div class="acc-header" data-index="4">
+            <div><strong>Is Aquaculture Aid free to use?</strong></div>
+            <div class="small">▸</div>
+          </div>
+          <div class="acc-body">
+            <p>Yes, it is completely free. Our mission is to make aquaculture resources accessible to everyone.</p>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <div class="acc-header" data-index="5">
+            <div><strong>What kind of problems are listed?</strong></div>
+            <div class="small">▸</div>
+          </div>
+          <div class="acc-body">
+            <p>Some major categories include:</p>
+            <ul>
+              <li>Disease Outbreaks</li>
+              <li>Climate Change & Weather Impacts</li>
+              <li>Training & Skill Development</li>
+              <li>Financial Support & Insurance</li>
+              <li>Market Access</li>
+              <li>Technology & Innovation</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <div class="acc-header" data-index="6">
+            <div><strong>How are solutions verified?</strong></div>
+            <div class="small">▸</div>
+          </div>
+          <div class="acc-body">
+            <p>Solutions are community-driven and may come from practitioners, researchers, or NGOs. We encourage multiple perspectives, but users should apply them based on their local context and expert advice.</p>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <div class="acc-header" data-index="7">
+            <div><strong>How can I connect with other farmers?</strong></div>
+            <div class="small">▸</div>
+          </div>
+          <div class="acc-body">
+            <p>You can join the Community section, where discussions, experiences, and peer-to-peer support are available.</p>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <div class="acc-header" data-index="8">
+            <div><strong>Can I access Aquaculture Aid offline?</strong></div>
+            <div class="small">▸</div>
+          </div>
+          <div class="acc-body">
+            <p>Currently, the platform is web-based. We are working on making offline resources (like PDF guides) available in the future.</p>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <div class="acc-header" data-index="9">
+            <div><strong>How can I suggest new problems or features?</strong></div>
+            <div class="small">▸</div>
+          </div>
+          <div class="acc-body">
+            <p>We encourage feedback! You can use the Contact page to suggest new problems, features, or improvements.</p>
+          </div>
+        </div>
+
       </div>
     </section>
-</main>
+  </main>
 
-<footer>
-    <div class="container" style="display:flex;justify-content:space-between;gap:18px;align-items:center">
+  <!-- Footer -->
+  <footer>
+    <div class="container" style="display:flex; justify-content:space-between; gap:18px; align-items:center;">
       <div>
         <div style="font-weight:700">Aquaculture Aid</div>
-        <div style="color:rgba(255,255,255,0.85);font-size:13px;margin-top:6px">Helping farmers with practical solutions.</div>
+        <div style="color:rgba(255,255,255,0.85); font-size:13px; margin-top:6px;">
+          Helping farmers with practical solutions.
+        </div>
       </div>
-      <div style="display:flex;gap:12px;align-items:center">
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
-        <a href="#contact">Contact</a>
-      </div>
+     <div style="color:rgba(255,255,255,0.7);font-size:12px">
+      © 2025 Aquaculture Aid. All rights reserved.
+    </div>
     </div>
   </footer>
-
-<!-- Join modal -->
-<div id="joinModal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <strong>Join Aquaculture Community</strong>
-      <button class="close-btn" onclick="closeJoin()">✕</button>
-    </div>
-    <p style="margin:0 0 12px;color:var(--muted)">Sign up to ask questions, post experiences, and get local help.</p>
-    <input id="joinName" placeholder="Your name" />
-    <input id="joinEmail" placeholder="Email address" />
-    <button class="cta" style="width:100%" onclick="submitJoin()">Join Now</button>
-  </div>
-</div>
-
 <script src="js/script.js"></script>
 </body>
 </html>

@@ -3,29 +3,7 @@
       const el = document.getElementById(id);
       if(el) el.scrollIntoView({behavior:'smooth'});
     }
-
-    // Join modal open/close
-    function openJoin(){
-      document.getElementById('joinModal').style.display = 'flex';
-    }
-    function closeJoin(){
-      document.getElementById('joinModal').style.display = 'none';
-    }
-    function submitJoin(){
-      const name = document.getElementById('joinName').value.trim();
-      const email = document.getElementById('joinEmail').value.trim();
-      if(!name || !email){
-        alert('Please enter your name and email to join.');
-        return;
-      }
-      alert(`Thank you, ${name}! You have successfully joined our community.`);
-      // Here you could add actual form submission code
-      closeJoin();
-      document.getElementById('joinName').value = '';
-      document.getElementById('joinEmail').value = '';
-    }
-
-    // FAQ accordion toggle
+// FAQ accordion toggle
     document.querySelectorAll('.acc-header').forEach(header => {
       header.addEventListener('click', () => {
         const item = header.parentElement;
@@ -35,135 +13,133 @@
       });
     });
 
-    // Problems & Solutions Data
-    const psData = [
-      {
-        type: 'problem',
-        icon: '⚠️',
-        title: 'Poor Water Quality',
-        desc: `Algae blooms, low oxygen levels, and harmful ammonia can kill fish quickly.`,
-        quickLinks: [
-          {text: 'Water Testing Guide', url: '#'},
-          {text: 'Aeration Techniques', url: '#'}
-        ],
-        solution: {
-          icon: '💧',
-          title: 'Improve Aeration & Testing',
-          desc: `Install low-cost aerators and use test strips weekly to monitor water quality. Add water plants to absorb nitrates.`,
-          quickLinks: [
-            {text: 'DIY Aerator Plans', url: '#'},
-            {text: 'Water Quality Management', url: '#'}
-          ]
-        }
-      },
-      {
-        type: 'problem',
-        icon: '🐟',
-        title: 'Diseases & Parasites',
-        desc: `Fish can get bacterial infections and parasites reducing survival rates.`,
-        quickLinks: [
-          {text: 'Common Diseases', url: '#'},
-          {text: 'Treatment Options', url: '#'}
-        ],
-        solution: {
-          icon: '🩺',
-          title: 'Regular Health Checks',
-          desc: `Quarantine new stock, maintain pond hygiene, and apply herbal treatments recommended by experts.`,
-          quickLinks: [
-            {text: 'Herbal Remedies', url: '#'},
-            {text: 'Pond Sanitation Tips', url: '#'}
-          ]
-        }
-      },
-      {
-        type: 'problem',
-        icon: '🍽️',
-        title: 'Feed Costs Too High',
-        desc: `High-quality feed can be expensive and hard to source in remote areas.`,
-        quickLinks: [
-          {text: 'Feed Cost Reduction', url: '#'},
-          {text: 'Local Feed Mixes', url: '#'}
-        ],
-        solution: {
-          icon: '🥗',
-          title: 'Use Local Feed Ingredients',
-          desc: `Mix local grains, legumes and agricultural by-products to create nutritious, affordable feed.`,
-          quickLinks: [
-            {text: 'Feed Formulation Guide', url: '#'},
-            {text: 'Affordable Feed Sources', url: '#'}
-          ]
-        }
-      }
-    ];
-
-    // Render Problems & Solutions cards
-    function renderPsCards(){
-      const container = document.getElementById('psGrid');
-      container.innerHTML = '';
-
-      psData.forEach((item, idx) => {
-        // Problem Card
-        const probCard = document.createElement('div');
-        probCard.className = 'ps-card problem';
-        probCard.innerHTML = `
-          <div class="ps-icon">${item.icon}</div>
-          <div>
-            <h3 class="ps-title">${item.title}</h3>
-            <div class="ps-desc">${item.desc}</div>
-            <div class="quick-links">${item.quickLinks.map(link => `<a href="${link.url}" target="_blank">${link.text}</a>`).join('')}</div>
-          </div>
-        `;
-
-        // Solution Card
-        const solCard = document.createElement('div');
-        solCard.className = 'ps-card solution';
-        solCard.innerHTML = `
-          <div class="ps-icon">${item.solution.icon}</div>
-          <div>
-            <h3 class="ps-title">${item.solution.title}</h3>
-            <div class="ps-desc">${item.solution.desc}</div>
-            <div class="quick-links">${item.solution.quickLinks.map(link => `<a href="${link.url}" target="_blank">${link.text}</a>`).join('')}</div>
-          </div>
-        `;
-
-        // Toggle solution visibility on problem click
-        probCard.addEventListener('click', () => {
-          // If solution is visible, hide it
-          if(solCard.style.display === 'flex') {
-            solCard.style.display = 'none';
-          } else {
-            solCard.style.display = 'flex';
-          }
-        });
-
-        // Initially hide solution
-        solCard.style.display = 'none';
-        solCard.style.flexDirection = 'row';
-
-        container.appendChild(probCard);
-        container.appendChild(solCard);
-      });
+   function toggleSolution(button) {
+    const solution = button.previousElementSibling;
+    if (solution.classList.contains('hidden')) {
+      solution.classList.remove('hidden');
+      button.textContent = 'Read Less';
+    } else {
+      solution.classList.add('hidden');
+      button.textContent = 'Read More';
     }
+  }
 
-    // Search button scrolls to problems
-    document.getElementById('searchBtn').addEventListener('click', () => {
-      const query = document.getElementById('searchInput').value.trim().toLowerCase();
-      if(query){
-        alert(`Searching for: "${query}"\n\n(Search functionality not yet implemented)`);
+// site-search.js
+document.addEventListener("DOMContentLoaded", () => {
+  const searchBtn = document.getElementById("searchBtn");
+  const searchInput = document.getElementById("searchInput");
+
+  // synonym map for alternatives
+  const keywordMap = {
+    "water": "water quality",
+    "clean water": "water quality",
+    "pollution": "water quality",
+    "disease": "disease outbreaks",
+    "virus": "disease outbreaks",
+    "fish health": "disease outbreaks",
+    "climate": "climate change",
+    "temperature": "climate change",
+    "weather": "weather-safety",
+    "training": "training-skill-development",
+    "skills": "training-skill-development",
+    "money": "financial-support",
+    "loans": "financial-support",
+    "funding": "financial-support",
+    "insurance": "insurance",
+    "market": "market-access",
+    "illegal": "illegal-fishing-practices",
+    "health": "health-issues",
+    "technology": "technology",
+    "innovation": "technology"
+  };
+
+  // Handle search click
+  if (searchBtn && searchInput) {
+    searchBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const query = searchInput.value.trim();
+      if (!query) return;
+      window.location.href = "problems.html?search=" + encodeURIComponent(query);
+    });
+  }
+
+  // If redirected to problems.html
+  const params = new URLSearchParams(window.location.search);
+  if (window.location.pathname.includes("problems.html") && params.has("search")) {
+    const query = params.get("search").toLowerCase().trim();
+    if (query) {
+      setTimeout(() => {
+        searchInProblems(query);
+      }, 300);
+    }
+  }
+
+  function searchInProblems(query) {
+    const cards = document.querySelectorAll(".problem-card");
+
+    // remove old highlights
+    cards.forEach(c => c.classList.remove("highlight"));
+
+    // map synonyms
+    if (keywordMap[query]) query = keywordMap[query];
+
+    let bestMatch = null;
+    let bestScore = Infinity;
+
+    cards.forEach(card => {
+      const title = card.querySelector("h3")?.innerText.toLowerCase() || "";
+
+      if (title.includes(query)) {
+        bestMatch = card;
+        bestScore = 0;
+      } else {
+        const dist = levenshtein(query, title);
+        if (dist < bestScore && dist <= 3) { // fuzzy matching
+          bestScore = dist;
+          bestMatch = card;
+        }
       }
-      scrollToSection('problems');
     });
 
-    // Subscribe newsletter (basic)
-    function subscribe(){
-      const email = document.getElementById('newsEmail').value.trim();
-      if(!email){
-        alert('Please enter your email address to subscribe.');
-        return;
-      }
-      alert(`Thank you for subscribing with ${email}!`);
-      document.getElementById('newsEmail').value = '';
+    if (bestMatch) {
+      bestMatch.scrollIntoView({ behavior: "smooth", block: "center" });
+      bestMatch.classList.add("highlight");
+    } else {
+      alert("No results found!");
     }
+  }
 
-    // On load
-    renderPsCards();
+  // Levenshtein Distance for typos
+  function levenshtein(a, b) {
+    const m = a.length, n = b.length;
+    const dp = Array.from({ length: m + 1 }, () => Array(n + 1).fill(0));
+
+    for (let i = 0; i <= m; i++) dp[i][0] = i;
+    for (let j = 0; j <= n; j++) dp[0][j] = j;
+
+    for (let i = 1; i <= m; i++) {
+      for (let j = 1; j <= n; j++) {
+        if (a[i - 1] === b[j - 1]) {
+          dp[i][j] = dp[i - 1][j - 1];
+        } else {
+          dp[i][j] = 1 + Math.min(
+            dp[i - 1][j], 
+            dp[i][j - 1], 
+            dp[i - 1][j - 1]
+          );
+        }
+      }
+    }
+    return dp[m][n];
+  }
+});
+
+let counter = 1;
+setInterval(() => {
+  document.getElementById("radio" + counter).checked = true;
+  counter++;
+  if (counter > 7) {
+    counter = 1;
+  }
+}, 3000);
+

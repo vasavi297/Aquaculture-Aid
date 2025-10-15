@@ -5,84 +5,329 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Problems — Aquaculture Aid</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .problem-card {
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      padding: 16px;
+      margin-bottom: 16px;
+      border-radius: 8px;
+    }
+
+    .problem-card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .summary {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .solution {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #444;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .read-more-btn {
+      margin-top: 10px;
+      background-color: transparent;
+      color: #007bff;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 6px 0;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
 
 <header>
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo">AQ</div>
-        <div>
-          <div style="font-size:15px">Aquaculture Aid</div>
-          <div style="font-size:12px;color:var(--muted);margin-top:2px">Community • Solutions • Resources</div>
-        </div>
-      </div>
-
-      
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="problems.html">Problems</a></li>
-          <li><a href="resources.html">Resources</a></li>
-          <li><a href="community.html">Community</a></li>
-          <li><a href="faq.html">FAQs</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    
-
-      <div class="search">
-        <input id="searchInput" placeholder="Search topics, e.g. water quality" />
-        <button class="cta" id="searchBtn">Search</button>
+  <div class="container nav">
+    <div class="brand">
+      <div class="logo">AA</div>
+      <div>
+        <div style="font-size:15px">Aquaculture Aid</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:2px">Community • Solutions • Resources</div>
       </div>
     </div>
-  </header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="problems.html">Problems</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="faq.html">FAQs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="search">
+      <input id="searchInput" placeholder="Search problems, e.g. Government schemes" />
+      <button class="cta" id="searchBtn">Search</button>
+    </div>
+  </div>
+</header>
 
 <main class="container">
-<section id="problems">
-      <div class="section-head">
-        <h2>Key Problems & Solutions</h2>
-        <div class="small">Tap a problem to view expanded solutions</div>
+  <section id="problems">
+    <div class="section-head">
+      <h2>Key Problems & Solutions</h2>
+      <div class="small">Tap a problem to view expanded solutions</div>
+    </div>
+
+    <div class="ps-grid" id="psGrid">
+      <div class="problem-card" id="Unstable-Market-Prices">
+        
+        <h3>📉 Unstable Market Prices</h3>
+        <p class="summary">Fishers often struggle with fluctuating prices due to middlemen and seasonal demand.</p>
+        <div class="solution hidden">
+          <p>To address this, fishers can form or join cooperatives or associations, enabling them to sell directly to consumers or markets, reducing reliance on middlemen. Aquaculture Aid provides guidance on how to connect with local markets and cooperatives, helping fishers secure fair and stable prices. Access to better market data allows fishers to plan their catch strategically, predict demand, and maximize income, ensuring long-term financial stability.</p>
+        </div>
+        <button class="light-btn" onclick="toggleSolution(this)">Read More</button>
       </div>
 
-      <div class="ps-grid" id="psGrid">
-        <!-- cards inserted here by JS -->
+      <div class="problem-card" id="weather-safety ">
+        <h3>🌩 Weather & Safety Risks</h3>
+        <p class="summary">Sudden storms and poor equipment pose serious threats to fishers’ lives.</p>
+        <div class="solution hidden">
+          <p>Fishers face life-threatening situations due to sudden storms, rough seas, and poor-quality equipment. Without proper safety measures, accidents at sea can be fatal. Governments and organizations offer safety training programs, teaching emergency response, navigation, and storm preparedness. Subsidized life jackets, radios, and emergency kits are available under <a href="https://pmmsy.dof.gov.in/" target="_blank">PMMSY</a>  and other state-level schemes. (You can Find these in  <a href="resources.html" target="_blank">Resources page</a>) Combined with early weather alerts and mobile notifications, these measures drastically reduce risk, ensuring fishers can work safely while minimizing potential losses or fatalities</p>
+        </div>
+        <button class="light-btn" onclick="toggleSolution(this)">Read More</button>
       </div>
 
-      <div style="margin-top:12px">
-        <button class="btn" onclick="openJoin()">Share a Problem</button>
+      <div class="problem-card" id="Government-schemes">
+  <h3>📜 Lack of Awareness on Government Schemes</h3>
+  <p class="summary">Many fishers miss out on support due to lack of information.</p>
+  <div class="solution hidden">
+    <p>
+      Aquaculture Aid provides a list of government schemes on the 
+      <a href="resources.html" target="_blank">Resources page</a>. 
+      Many fishers miss out on financial support, insurance, and training due to limited information. 
+      Awareness campaigns, including community workshops, informational pamphlets, mobile apps, and helplines, help bridge this gap. 
+      Schemes like Fishermen Welfare Programs provide pension plans, accident and life insurance, equipment subsidies, and financial aid during lean periods. 
+      By engaging with these resources, fishers can improve income, access modern equipment, receive disaster assistance, and gain financial security and peace of mind.
+    </p>
+  </div>
+  <button class="light-btn" onclick="toggleSolution(this)">Read More</button>
+</div>
+
+      <div class="problem-card" id="fish-stocks">
+        <h3>🐟 Declining Fish Stocks</h3>
+        <p class="summary">Overfishing and pollution threaten marine biodiversity.</p>
+        <div class="solution hidden">
+          <p>Overfishing, pollution, and climate change reduce fish populations, threatening livelihoods and the environment. Sustainable practices like seasonal bans, catch limits, use of selective nets, and participation in community-managed fisheries are recommended. <a href="https://pmmsy.dof.gov.in/" target="_blank">PMMSY</a> and similar schemes support restocking programs, eco-friendly aquaculture, and habitat conservation projects, helping maintain healthy marine ecosystems while ensuring that fishers have a reliable, long-term source of income.</p>
+        </div>
+        <button class="light-btn" onclick="toggleSolution(this)">Read More</button>
       </div>
-    </section>
+    <div class="problem-card" id="high-costs">
+      <h3>💸 High Operational Costs</h3>
+      <p class="summary">Fuel, ice, and equipment costs reduce profitability.</p>
+      <div class="solution hidden">
+      <p>  Rising costs for fuel, ice, maintenance, and equipment reduce profitability, particularly for small-scale fishers. Government programs under <a href="https://pmmsy.dof.gov.in/" target="_blank">PMMSY</a> provide subsidies, low-interest microloans, and shared community resources. These initiatives allow fishers to purchase fuel and equipment affordably, maintain boats efficiently, and invest in ice or storage facilities, helping them increase profits while reducing financial stress.</p>
+      </div>
+      <button class="light-btn" onclick="toggleSolution(this)">Read More</button>
+    </div>
+
+    <div class="problem-card" id="illegal fishing practices">
+      <h3>🚫 Illegal Fishing Practices</h3>
+      <p class="summary">Unapproved gear and methods lead to fines and damage.</p>
+      <div class="solution hidden">
+        <p>Using unapproved gear or illegal methods can harm ecosystems and reduce profitability. Governments educate fishers on legal practices, mesh sizes, and banned zones, while enforcement ensures compliance. Participating in community-managed monitoring and conservation programs under <a href="https://pmmsy.dof.gov.in/" target="_blank">PMMSY</a> protects resources, promotes fair competition, and sustains the industry for future generations.</p>
+      </div>
+      <button class="light-btn" onclick="toggleSolution(this)">Read More</button>
+    </div>
+
+    <div class="problem-card" id="training - skill development">
+      <h3>🎓 Limited Training & Skill Development</h3>
+      <p class="summary">Lack of modern knowledge reduces efficiency and income.</p>
+      <div class="solution hidden">
+        <p>Many fishers lack modern knowledge in fishing techniques, post-harvest handling, and marketing. Government programs offer skill development workshops, hands-on training, and technical guidance, improving techniques, product quality, and profitability. Well-trained fishers can increase efficiency, reduce waste, and access premium markets, benefiting both income and community sustainability. You can find some of the Training Videos in <a href="resources.html" target="_blank">Resources page</a>.</p>
+      </div>
+      <button class="light-btn" onclick="toggleSolution(this)">Read More</button>
+    </div>
+
+    <div class="problem-card" id="poor-access ">
+      <h3>🛣 Poor Access to Markets</h3>
+      <p class="summary">Remote locations limit market access and fair pricing.</p>
+      <div class="solution hidden">
+        <p>Remote coastal locations limit access to profitable markets, forcing fishers to sell at lower prices. Government-supported fish markets, transport subsidies, and e-marketing platforms provide better access to urban and regional markets. This allows fishers to negotiate fair prices, plan sales according to demand, and reduce dependence on middlemen, ultimately improving income stability.</p>
+      </div>
+      <button class="light-btn" onclick="toggleSolution(this)">Read More</button>
+    </div>
+
+    <div class="problem-card" id="pollution-environment threats">
+      <h3>🌊 Pollution & Environmental Threats</h3>
+      <p class="summary">Pollution and climate change threaten marine health.</p>
+      <div class="solution hidden">
+        <p>Industrial waste, water pollution, and climate change affect fish populations and aquatic health. Fishers can adopt eco-friendly aquaculture, proper waste management, and water quality monitoring. <a href="https://pmmsy.dof.gov.in/" target="_blank">PMMSY</a> and other programs provide financial and technical support for sustainable practices, ensuring that fishers protect ecosystems, maintain fish stocks, and secure long-term livelihoods.Visit <a href="resources.html" target="_blank">Resources page</a> to know about other programs.</p>
+      </div>
+      <button class="light-btn" onclick="toggleSolution(this)">Read More</button>
+    </div>
+
+    <div class="problem-card" id="financial">
+      <h3>📉 Debt and Financial Instability</h3>
+      <p class="summary">High-interest loans cause financial stress for fishers.</p>
+      <div class="solution hidden">
+        <p>High operational costs and unpredictable prices often force fishers into high-interest loans, creating financial stress. Government-supported low-interest loans, insurance, and direct income support reduce this burden. Engaging with financial literacy programs enables fishers to plan budgets, save for lean periods, and avoid exploitative lenders, ensuring financial stability even in challenging conditions.</p>
+      </div>
+      <button class="light-btn" onclick="toggleSolution(this)">Read More</button>
+    </div>
+
+    <div class="problem-card" id="limited access-modern technology">
+      <h3>📡 Limited Access to Modern Technology</h3>
+      <p class="summary">Lack of GPS and digital tools limits efficiency and reach.</p>
+      <div class="solution hidden">
+        <p> Many fishers lack GPS, sonar, or digital platforms, limiting efficiency and market access. Government programs under <a href="https://pmmsy.dof.gov.in/" target="_blank">PMMSY</a> and state initiatives provide affordable technology and training. Learning to use fish-finding devices, digital marketplaces, and mobile apps for demand prediction allows fishers to maximize catch efficiency, reduce fuel consumption, and sell at better prices, improving both income and safety.</p>
+      </div>
+      <button class="light-btn" onclick="toggleSolution(this)">Read More</button>
+    </div>
+
+    <div class="problem-card" id="insurance">
+      <h3>🛡 Lack of Insurance Coverage</h3>
+      <p class="summary">Fishers are vulnerable to accidents and disasters.</p>
+      <div class="solution hidden">
+        <p>Without insurance, fishers are vulnerable to accidents, equipment loss, or natural disasters. Schemes like Fishermen Insurance Programs provide life, accident, and asset coverage, while government welfare initiatives also cover medical emergencies and boat damage. Access to these schemes ensures fishers recover quickly from unforeseen events without suffering long-term financial hardship.You can find these insurance Scheme in <a href="resources.html" target="_blank">Resources page</a>.</p>
+      </div>
+      <button class="light-btn" onclick="toggleSolution(this)">Read More</button>
+    </div>
+
+    <div class="problem-card" id="health-physical strain">
+      <h3>💪 Health & Physical Strain</h3>
+      <p class="summary">Long hours and heavy lifting cause fatigue and injuries.</p>
+      <div class="solution hidden">
+        <p>Fishers work long hours with heavy lifting, exposure to sun, cold, and rough sea conditions, leading to fatigue, back pain, and musculoskeletal problems. Governments and welfare programs provide medical checkups, insurance, and occupational safety training. Ergonomic equipment, protective clothing, and adherence to safe handling techniques reduce strain. Maintaining personal hygiene and taking regular breaks ensures fishers stay healthy and maintain productivity, safeguarding both short-term earnings and long-term well-being.</p>
+      </div>
+      <button class="light-btn" onclick="toggleSolution(this)">Read More</button>
+    </div>
+
+    <div class="problem-card" id="limited storage">
+      <h3>❄ Limited Storage & Cold Chain Infrastructure</h3>
+      <p class="summary">Lack of cold storage leads to spoilage and lower market value.</p>
+      <div class="solution hidden">
+        <p>Inadequate storage leads to spoilage, lowering the quality and market value of fish. Building community cold storage units and refrigerated transport systems with government support helps fishers preserve fish quality, reduce waste, and extend shelf life. PMMSY offers financial and technical assistance to establish such infrastructure, enabling fishers to sell products at better prices and gain access to distant markets.</p>
+      </div>
+      <button class="light-btn" onclick="toggleSolution(this)">Read More</button>
+    </div>
+    
+  <div class="problem-card" id="post-harvest">
+    <h3>🧊 Post-Harvest Losses</h3>
+    <p class="summary">Improper handling and storage lead to significant fish loss.</p>
+    <div class="solution hidden">
+      <p> Improper handling, processing, or storage results in significant fish loss. Training on hygienic handling, proper icing, processing techniques, and cold chain management reduces spoilage. Government programs provide infrastructure support and technical guidance, helping fishers retain product quality, sell at higher prices, and minimize financial losses.</p>
+    </div>
+    <button class="light-btn" onclick="toggleSolution(this)">Read More</button>
+  </div>
+
+  <div class="problem-card" id="gender-inequality">
+    <h3>👩‍🌾 Gender Inequality in Fisheries</h3>
+    <p class="summary">Women fishers often lack access to resources and support.</p>
+    <div class="solution hidden">
+      <p>Women fishers often have less access to resources, training, or financial aid. PMMSY and related women empowerment schemes provide equal opportunities, targeted training programs, microfinance support, and community initiatives, enabling women to actively participate in fisheries, increase income, and contribute to household and community welfare.</p>
+    </div>
+    <button class="light-btn" onclick="toggleSolution(this)">Read More</button>
+  </div>
+
+  <div class="problem-card" id="limited support">
+    <h3>🌪 Limited Support During Disasters</h3>
+    <p class="summary">Storms and floods can destroy boats and livelihoods.</p>
+    <div class="solution hidden">
+      <p> Cyclones, floods, and storms can destroy boats, nets, and livelihoods. Government disaster relief programs provide compensation, temporary employment, rehabilitation, and support for rebuilding boats or equipment. Accessing these programs ensures fishers recover quickly from disasters and maintain financial and operational stability.</p>
+    </div>
+    <button class="light-btn" onclick="toggleSolution(this)">Read More</button>
+  </div>
+
+  <div class="problem-card" id="sustainable-practices">
+    <h3>🐠 Sustainable Fishing Practices</h3>
+    <p class="summary">Overfishing and harmful methods threaten marine ecosystems.</p>
+    <div class="solution hidden">
+      <p> Overfishing and destructive techniques threaten marine life and future income. Adopting selective nets, seasonal restrictions, and participation in community-managed zones ensures sustainability. PMMSY promotes eco-friendly aquaculture, habitat restoration, and awareness programs, helping fishers protect resources while securing long-term earnings.</p>
+    </div>
+    <button class="light-btn" onclick="toggleSolution(this)">Read More</button>
+  </div>
+
+  <div class="problem-card" id="government approved-fishing-methods">
+    <h3>✅ Government-Approved Fishing Methods</h3>
+    <p class="summary">Unapproved methods risk fines and environmental damage.</p>
+    <div class="solution hidden">
+      <p> Illegal methods can cause fines, loss of gear, and environmental damage. Following government-approved practices, mesh sizes, seasonal restrictions, and banned gear regulations prevents penalties. Local fisheries offices provide guidance and support, ensuring fishers operate legally, sustainably, and profitably. You can find the Local fisheries office Websites in <a href="resources.html" target="_blank">Resources page</a>.</p>
+    </div>
+    <button class="light-btn" onclick="toggleSolution(this)">Read More</button>
+  </div>
+
+  <div class="problem-card" id="training">
+    <h3>🎯 Training for Modern Fishing Techniques</h3>
+    <p class="summary">Lack of technical skills reduces efficiency and income.</p>
+    <div class="solution hidden">
+      <p>Lack of technical knowledge reduces efficiency. Training programs under PMMSY teach GPS navigation, sonar use, aquaculture methods, handling techniques, and post-harvest processing. Fishers applying these skills can increase catch efficiency, reduce fuel costs, and access higher-value markets, improving both safety and income . Go to <a href="resources.html" target="_blank">Resources page</a> to Watch some videos on Traininig and Modern fishing techniques.</p>
+      </div>
+    <button class="light-btn" onclick="toggleSolution(this)">Read More</button>
+  </div>
+
+  <div class="problem-card" id="access-safety equipment">
+    <h3>🛟 Access to Safety Equipment</h3>
+    <p class="summary">Many fishers lack life jackets, radios, and first aid kits.</p>
+    <div class="solution hidden">
+      <p> Many fishers lack life jackets, radios, and first aid kits. Governments provide subsidized or free equipment through welfare schemes, ensuring safety at sea. Proper use of these tools helps prevent accidents, improve emergency response, and protect lives, making fishing safer for individuals and communities.</p>
+      </div>
+    <button class="light-btn" onclick="toggleSolution(this)">Read More</button>
+  </div>
+
+  <div class="problem-card" id="insurance">
+    <h3>🏥 Insurance and Medical Facilities</h3>
+    <p class="summary">Fishers face health risks without proper coverage.</p>
+    <div class="solution hidden">
+      <p>Fishers are exposed to accidents and illnesses without protection. Fishermen insurance schemes and health camps provide life and accident coverage, medical checkups, and emergency care. Participating in these programs ensures quick recovery from accidents, financial support during emergencies, and overall health security.</p>
+      </div>
+    <button class="light-btn" onclick="toggleSolution(this)">Read More</button>
+  </div>
+
+  <div class="problem-card" id="health issues">
+    <h3>💪 Health Issues and Prevention</h3>
+    <p class="summary">Marine conditions cause fatigue, pain, and injuries.</p>
+    <div class="solution hidden">
+      <p>Harsh marine conditions cause fatigue, back pain, skin issues, and musculoskeletal problems. Fishers can follow ergonomic handling, protective clothing, regular breaks, and hygiene practices. Government health camps and insurance schemes assist in preventive care, early diagnosis, and treatment, allowing fishers to maintain long-term health and work efficiency.</p>
+      </div>
+    <button class="light-btn" onclick="toggleSolution(this)">Read More</button>
+  </div>
+
+</div>
+   
+   <div style="margin-top:12px">
+  <button 
+    class="btn" 
+    onclick="location.href='community.html'" 
+    style="background-color: #0b76d1; 
+           color: white; 
+           padding: 10px 20px; 
+           border: none; 
+           border-radius: 5px; 
+           cursor: pointer;
+           font-size: 16px;">
+    Share a Problem
+  </button>
+</div>
+  </section>
 </main>
 
 <footer>
-    <div class="container" style="display:flex;justify-content:space-between;gap:18px;align-items:center">
-      <div>
-        <div style="font-weight:700">Aquaculture Aid</div>
-        <div style="color:rgba(255,255,255,0.85);font-size:13px;margin-top:6px">Helping farmers with practical solutions.</div>
-      </div>
-      <div style="display:flex;gap:12px;align-items:center">
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
-        <a href="#contact">Contact</a>
-      </div>
+  <div class="container" style="display:flex;justify-content:space-between;gap:18px;align-items:center">
+    <div>
+      <div style="font-weight:700">Aquaculture Aid</div>
+      <div style="color:rgba(255,255,255,0.85);font-size:13px;margin-top:6px">Helping farmers with practical solutions.</div>
     </div>
-  </footer>
-
-<!-- Join modal -->
-<div id="joinModal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <strong>Join Aquaculture Community</strong>
-      <button class="close-btn" onclick="closeJoin()">✕</button>
+    <div style="color:rgba(255,255,255,0.7);font-size:12px">
+      © 2025 Aquaculture Aid. All rights reserved.
     </div>
-    <p style="margin:0 0 12px;color:var(--muted)">Sign up to ask questions, post experiences, and get local help.</p>
-    <input id="joinName" placeholder="Your name" />
-    <input id="joinEmail" placeholder="Email address" />
-    <button class="cta" style="width:100%" onclick="submitJoin()">Join Now</button>
   </div>
-</div>
-
+</footer>
 <script src="js/script.js"></script>
 </body>
 </html>

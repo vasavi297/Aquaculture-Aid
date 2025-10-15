@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pond Water Quality Improvement</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #1565c0;
+      --primary-dark: #003c8f;
+      --secondary: #f5f6fa;
+      --accent: #e3f2fd;
+      --danger: #e53935;
+      --border: #e0e0e0;
+      --shadow: 0 6px 24px 0 rgba(60, 80, 120, 0.08);
+      --card-radius: 20px;
+    }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--secondary);
+      color: #222;
+      margin: 0; padding: 0;
+    }
+    .wrapper {
+      max-width: 600px;
+      margin: 3rem auto;
+      padding: 1rem;
+    }
+    h1 {
+      font-size: 2.3rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      color: var(--primary-dark);
+      margin-top: 60px;
+      margin-bottom: 24px;
+      text-align: left;
+    }
+    .top-btn {
+      position: fixed;
+      top: 18px;
+      right: 30px;
+      z-index: 1000;
+      padding: 13px 20px;
+      border: none;
+      border-radius: 40px;
+      background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+      color: #fff;
+      cursor: pointer;
+      font: 700 16px 'Inter', system-ui, sans-serif;
+      box-shadow: var(--shadow);
+      transition: background .18s;
+    }
+    .top-btn:hover {
+      background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+    }
+    .post {
+      background: #fff;
+      border-radius: var(--card-radius);
+      box-shadow: var(--shadow);
+      border: 1.5px solid var(--border);
+      margin-bottom: 1.3rem;
+      padding: 1.2rem 1.5rem .9rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: box-shadow .18s;
+    }
+    .meta {
+      display: flex;
+      align-items: center;
+      gap: 1.2em;
+      margin-bottom: 3px;
+      font-size: 0.96rem;
+      color: #64748b;
+    }
+    .avatar {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--primary-dark);
+      font-weight: 700;
+      font-size: 1.18rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 11px;
+      flex-shrink: 0;
+    }
+    .meta-info {
+      display: flex; align-items: center; gap: 9px;
+    }
+    .meta-id {
+      color: #9ca3af; font-size: .9em; margin-left: auto;
+    }
+    .content {
+      font-size: 1.08rem;
+      color: #364152;
+      line-height: 1.52;
+      word-break: break-word;
+    }
+    .actions {
+      display: flex;
+      gap: 0.9rem;
+      align-items: center;
+      margin-top: 7px;
+    }
+    .like, .delete {
+      appearance: none;
+      border: none;
+      background: none;
+      font: 600 1rem 'Inter', system-ui, sans-serif;
+      padding: 6px 13px;
+      border-radius: 9px;
+      cursor: pointer;
+      outline: none;
+      transition: background 0.13s, color 0.13s;
+    }
+    .like {
+      color: var(--primary-dark);
+      display: flex; align-items: center;
+      gap: 5px;
+    }
+    .like.liked {
+      color: #e91e63;
+      background: #fce4ec;
+      font-weight: 700;
+    }
+    .like:not(.liked):hover {
+      background: var(--accent);
+    }
+    .delete {
+      color: var(--danger);
+      background: #ffebee;
+      margin-left: auto;
+    }
+    .delete:hover {
+      background: #ffcdd2;
+    }
+    /* Dialog (Modal) */
+    dialog {
+      border: none;
+      border-radius: 18px;
+      padding: 26px 28px 24px 28px;
+      max-width: 410px; width: 90vw;
+      box-shadow: 0 12px 38px rgba(28,32,52,.17);
+      background: #fff;
+      animation: popUp .28s cubic-bezier(.3,1.07,.53,.96);
+    }
+    @keyframes popUp { from { opacity:0; transform:scale(.95); } to{ opacity:1; transform:scale(1);}}
+    dialog::backdrop {
+      background: rgba(18, 28, 52, 0.17);
+      backdrop-filter: blur(2px);
+    }
+    .form h3 {
+      color: var(--primary-dark);
+      margin: 0 0 9px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .form input, .form textarea {
+      width: 100%;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font: 15px 'Inter', system-ui, sans-serif;
+      outline: none;
+      padding: 12px 13px;
+      margin-bottom: 10px;
+      background: #f8fafc;
+      transition: border .18s;
+      resize: none;
+      box-sizing: border-box;
+    }
+    .form textarea { min-height: 84px; }
+    .form input:focus, .form textarea:focus { border-color: var(--primary); background: #e3f2fd; }
+    menu {
+      display: flex;
+      gap: 10px; justify-content: right;
+      margin-top: 10px;
+      padding: 0;
+    }
+    menu button {
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-family: 'Inter', system-ui, sans-serif;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    #cancelBtn { background: #e0e7ef; color: #333; }
+    #cancelBtn:hover { background: #d0daf2; }
+    #submitBtn { background: var(--primary); color: #fff; }
+    #submitBtn:hover { background: var(--primary-dark);}
+    @media (max-width: 700px) {
+      .wrapper { padding: 1rem .4rem; }
+      .top-btn { right: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <button id="openBtn" class="top-btn" aria-haspopup="dialog" aria-controls="postDialog">+ Add Message</button>
+  <div class="wrapper">
+    <h1>Trending Feed</h1>
+    <dialog id="postDialog" aria-label="Create a new post">
+      <form method="dialog" class="form" id="postFormModal">
+        <h3>New Post</h3>
+        <input type="text" id="name" name="name" placeholder="Enter your name" />
+        <textarea id="message" name="message" placeholder="Enter your message..." required></textarea>
+        <menu>
+          <button type="reset" id="cancelBtn" value="cancel">Cancel</button>
+          <button type="submit" id="submitBtn" value="submit">Submit</button>
+        </menu>
+      </form>
+    </dialog>
+    <div id="feed"></div>
+  </div>
+
+  <script>
+    const FEED_KEY = 'guest_feed_v1';
+    const LIKES_KEY = 'guest_likes_v1';
+
+    const feedEl = document.getElementById('feed');
+
+    // Modal elements
+    const openBtn = document.getElementById('openBtn');
+    const dlg = document.getElementById('postDialog');
+    const formModal = document.getElementById('postFormModal');
+    const nameModal = document.getElementById('name');
+    const msgModal = document.getElementById('message');
+    const cancelBtn = document.getElementById('cancelBtn');
+
+    // Data
+    let posts = JSON.parse(localStorage.getItem(FEED_KEY) || '[]');
+    let likes = new Set(JSON.parse(localStorage.getItem(LIKES_KEY) || '[]'));
+
+    function save() {
+      localStorage.setItem(FEED_KEY, JSON.stringify(posts));
+      localStorage.setItem(LIKES_KEY, JSON.stringify([...likes]));
+    }
+
+    function uid() {
+      return 'p_' + Math.random().toString(36).slice(2) + Date.now().toString(36);
+    }
+
+    function getInitials(name) {
+      if (!name) return 'G';
+      let n = name.trim().split(" ");
+      if (n.length === 1) return n[0][0].toUpperCase();
+      return (n[0][0] + n[n.length - 1][0]).toUpperCase();
+    }
+
+    function render() {
+      feedEl.innerHTML = '';
+      for (const p of posts.slice().sort((a,b)=>b.ts-a.ts)) {
+        const div = document.createElement('div');
+        div.className = 'post';
+        
+        // Avatar + Meta
+        const meta = document.createElement('div');
+        meta.className = 'meta';
+        
+        // Avatar
+        const avatar = document.createElement('div');
+        avatar.className = 'avatar';
+        avatar.textContent = getInitials(p.name && p.name.trim() ? p.name.trim() : 'Guest');
+        
+        // Name, Time, ID
+        const metaInfo = document.createElement('div');
+        metaInfo.className = 'meta-info';
+        const author = p.name && p.name.trim() ? p.name.trim() : 'Guest';
+        metaInfo.innerHTML = `<span><b>${author}</b> • ${new Date(p.ts).toLocaleString()}</span>`;
+        
+        // ID
+        const metaId = document.createElement('span');
+        metaId.className = 'meta-id';
+        metaId.textContent = `ID: ${p.id}`;
+        
+        meta.appendChild(avatar);
+        meta.appendChild(metaInfo);
+        meta.appendChild(metaId);
+        
+        // Message Content
+        const content = document.createElement('div');
+        content.className = 'content';
+        content.textContent = p.text;
+        
+        // Actions
+        const actions = document.createElement('div');
+        actions.className = 'actions';
+        
+        // Like button
+        const likeBtn = document.createElement('button');
+        likeBtn.type = 'button';
+        likeBtn.className = 'like' + (likes.has(p.id) ? ' liked' : '');
+        likeBtn.innerHTML = likes.has(p.id) ? `&#10084; Liked` : `&#9825; Like`;
+        likeBtn.onclick = () => {
+          if (likes.has(p.id)) {
+            likes.delete(p.id);
+            p.likeCount = Math.max(0, (p.likeCount || 0) - 1);
+          } else {
+            likes.add(p.id);
+            p.likeCount = (p.likeCount || 0) + 1;
+          }
+          save();
+          render();
+        };
+        
+        // Like count
+        const count = document.createElement('span');
+        count.textContent = `${p.likeCount || 0} likes`;
+        
+        // Delete button
+        const delBtn = document.createElement('button');
+        delBtn.type = 'button';
+        delBtn.className = 'delete';
+        delBtn.textContent = 'Delete';
+        delBtn.onclick = () => {
+          const idx = posts.findIndex(x => x.id === p.id);
+          if (idx !== -1) {
+            posts.splice(idx, 1);
+            likes.delete(p.id);
+            save();
+            render();
+          }
+        };
+        
+        actions.appendChild(likeBtn);
+        actions.appendChild(count);
+        actions.appendChild(delBtn);
+        
+        div.appendChild(meta);
+        div.appendChild(content);
+        div.appendChild(actions);
+        feedEl.appendChild(div);
+      }
+    }
+
+    // Open dialog
+    openBtn.addEventListener('click', () => {
+      if (!dlg.open) dlg.showModal();
+    });
+
+    // Close on Cancel
+    cancelBtn.addEventListener('click', () => dlg.close('cancel'));
+
+    // Close on backdrop click
+    dlg.addEventListener('click', (e) => {
+      const rect = dlg.getBoundingClientRect();
+      const inDialog =
+        e.clientX >= rect.left && e.clientX <= rect.right &&
+        e.clientY >= rect.top && e.clientY <= rect.bottom;
+      if (!inDialog) dlg.close('backdrop');
+    });
+
+    // Handle modal submit -> add post to feed
+    formModal.addEventListener('submit', (e) => {
+      const text = msgModal.value.trim();
+      if (!text) return; // required attribute already set
+      posts.push({ 
+        id: uid(), 
+        name: nameModal.value || '', 
+        text, 
+        ts: Date.now(), 
+        likeCount: 0 
+      });
+      save();
+      render();
+      formModal.reset();
+      dlg.close('submit');
+    });
+
+    // Initial render
+    render();
+  </script>
+</body>
+</html>

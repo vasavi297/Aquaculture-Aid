@@ -5,13 +5,19 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Index — Aquaculture Aid</title>
   <link rel="stylesheet" href="css/style.css">
+  
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
 
 <header>
     <div class="container nav">
       <div class="brand">
-        <div class="logo">AQ</div>
+        <div class="logo">AA</div>
         <div>
           <div style="font-size:15px">Aquaculture Aid</div>
           <div style="font-size:12px;color:var(--muted);margin-top:2px">Community • Solutions • Resources</div>
@@ -32,7 +38,7 @@
     
 
       <div class="search">
-        <input id="searchInput" placeholder="Search topics, e.g. water quality" />
+        <input id="searchInput" placeholder="Search problems, e.g. Government schemes" />
         <button class="cta" id="searchBtn">Search</button>
       </div>
     </div>
@@ -40,72 +46,206 @@
 
 <main class="container">
 <section id="home" class="hero">
-      <div class="hero-left">
-        <h1>Empowering Aquaculture Farmers for a Better Tomorrow</h1>
-        <p>Practical, low-cost and community-tested solutions to the challenges facing small and medium fish farmers.</p>
-        <div class="hero-actions">
-          <button class="btn-outline" onclick="scrollToSection('problems')">View Problems & Solutions</button>
-          <button class="cta" onclick="openJoin()">Join Our Community</button>
-        </div>
+  
+<!-- Left Column -->
+  <div class="hero-left">
+    <h1>Empowering Fishers for a Better Tomorrow</h1>
+    <p>Helping small and medium fishers overcome challenges with practical, low-cost solutions.</p>
 
-        <div style="margin-top:22px;display:flex;gap:12px">
-          <div class="hero-card">
-            <div style="width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg,var(--blue),var(--green));color:white;display:grid;place-items:center">✓</div>
-            <div>
-              <div style="font-weight:700">100+ Verified Tips</div>
-              <div style="font-size:13px;color:var(--muted)">From farmers and experts</div>
-            </div>
-          </div>
+    <div class="hero-actions">
+      <button class="btn-outline" onclick="location.href='problems.html'">View Problems & Solutions</button>
+      <button class="cta" onclick="location.href='community.html'">Join Our Community</button>
+    </div>
 
-          <div class="hero-card">
-            <div style="width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg,#ffd36b,#ffb66b);display:grid;place-items:center">💡</div>
-            <div>
-              <div style="font-weight:700">Practical Solutions</div>
-              <div style="font-size:13px;color:var(--muted)">Field-tested and low-cost</div>
-            </div>
-          </div>
+    <div class="hero-stats">
+      <div class="stat-card" data-aos="fade-up">
+        <div class="stat-icon" style="background: linear-gradient(135deg, var(--blue), var(--green));">📜</div>
+        <div>
+          <div class="stat-title">20+ Government Schemes</div>
+          <div class="stat-sub">Latest welfare programs for fishers</div>
         </div>
       </div>
-
-      <aside class="hero-right">
-        <div style="font-weight:700;margin-bottom:8px">Quick Links</div>
-        <div style="display:flex;flex-direction:column;gap:10px">
-          <a href="#resources" style="text-decoration:none;color:var(--deep);">Government Subsidies & Schemes</a>
-          <a href="#community" style="text-decoration:none;color:var(--deep);">Success Stories</a>
-          <a href="#contact" style="text-decoration:none;color:var(--deep);">Contact Local Extension</a>
+      <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="stat-icon" style="background: linear-gradient(135deg, #ffb347, #ffcc33);">🛠️</div>
+        <div>
+          <div class="stat-title">15+ Solutions for Problems</div>
+          <div class="stat-sub">Practical, low-cost fixes for daily challenges</div>
         </div>
-      </aside>
-    </section>
+      </div>
+    </div>
+  </div>
+  
+<!-- Right Column -->
+
+<aside class="hero-right">
+  <img src="images/logo.png" class="hero-logo" alt="Aquaculture Aid">
+</aside>
+<br><br>
+<div class="slider">
+    <div class="slides">
+
+      <!-- Radio buttons -->
+      <input type="radio" name="radio-btn" id="radio1">
+      <input type="radio" name="radio-btn" id="radio2">
+      <input type="radio" name="radio-btn" id="radio3">
+      <input type="radio" name="radio-btn" id="radio4">
+      <input type="radio" name="radio-btn" id="radio5">
+      <input type="radio" name="radio-btn" id="radio6">
+      <input type="radio" name="radio-btn" id="radio7">
+
+      <!-- Slide images -->
+      <div class="slide first">
+    <img src="images/image1.jpg" alt="Fishing Image 1">
+  <div class="caption">
+    <h2>Empowering Fishermen</h2>
+    <p>Discover government schemes and welfare programs.</p>
+  </div>
+</div>
+
+<div class="slide">
+  <img src="images/image2.jpg" alt="Fishing Image 2">
+  <div class="caption">
+    <h2>Join Our Community</h2>
+    <p>Ask questions, share experiences, and connect with others.</p>
+  </div>
+</div>
+
+<div class="slide">
+  <img src="images/image3.jpg" alt="Fishing Image 3">
+  <div class="caption">
+    <h2>Solutions for Fishermen</h2>
+    <p>Find answers to 15+ common fishing-related problems.</p>
+  </div>
+</div>
+
+<div class="slide">
+  <img src="images/image4.jpg" alt="Fishing Image 4">
+  <div class="caption">
+    <h2>Sustainable Fishing</h2>
+    <p>Learn best practices for a healthier future.</p>
+  </div>
+ </div>
+
+<div class="slide">
+  <img src="images/image5.jpg" alt="Fishing Image 5">
+  <div class="caption">
+    <h2>Government Support</h2>
+    <p>Stay updated on the latest schemes, subsidies, and welfare benefits for fishermen.</p>
+  </div>
+</div>
+
+      <div class="slide">
+        <img src="images/image6.jpg" alt="Fishing Image 6">
+        <div class="caption">
+    <h2>Innovative Fishing Techniques</h2>
+    <p>Explore new methods to increase your catch and reduce effort.</p>
+  </div>
+      </div>
+      <div class="slide">
+        <img src="images/image7.jpg" alt="Fishing Image 7">
+        <div class="caption">
+    <h2>Fishing Safety Tips</h2>
+    <p>Discover essential safety measures to protect yourself at sea.</p>
+  </div>
+      </div>
+    </div>
+  </div>
+
+
+ <!-- ===== ABOUT US ===== -->
+<section id="about-us" class="container" data-aos="fade-up">
+  <h2>About Us</h2>
+  <p>
+    <strong>Aquaculture Aid</strong> is a community service initiative dedicated to supporting and empowering fishers. We understand the challenges fishers face—unpredictable weather, limited resources, and difficulties accessing markets or equipment. Our goal is to provide practical, low-cost solutions that make a real difference in their lives.
+  </p>
+  <p>We bridge the gap between fishers and the resources available to them, offering expert advice, modern techniques, government welfare schemes, and training programs to improve productivity and income. Knowledge is empowerment, and through sharing best practices, safety measures, and sustainable fishing methods, we help fishers succeed long-term.
+    </p>
+    <p>
+      Community collaboration is at the heart of our work. We involve fishers in identifying problems and co-creating solutions, building a network where they can learn, share, and grow together. Our vision is a world where every fisher has the tools and opportunities to thrive.
+    </p>
+</section>
+<!-- ===== HOW WE HELP ===== -->
+<section id="how-we-help" class="how-section" data-aos="fade-up">
+  <h2>How We Help</h2>
+  <div class="how-grid">
+    <div class="how-card">📜 <span>Awareness on Government Schemes</span></div>
+    <div class="how-card">🛠️ <span>Solutions for Common Problems</span></div>
+    <div class="how-card">🦺 <span>Safety & Training Support</span></div>
+    <div class="how-card">💹 <span>Market Price Guidance</span></div>
+  </div>
+</section>
+<!-- ===== PROBLEMS & SOLUTIONS ===== -->
+<section id="problems-section" class="container" data-aos="fade-up">
+  <h2>Frequently Reported Challenges</h2>
+  <div class="problem-grid">
+    <div class="problem-card">
+      <h3>Unstable Market Prices</h3>
+      <p>Fishers often face unpredictable price changes due to middlemen and market demand fluctuations.</p>
+      <a href="problems.html" class="light-btn">Read More</a>
+    </div>
+    <div class="problem-card">
+      <h3>Weather & Safety Risks</h3>
+      <p>Sudden storms and poor safety gear put fishers’ lives at risk while out at sea.</p>
+      <a href="problems.html" class="light-btn">Read More</a>
+    </div>
+    <div class="problem-card">
+      <h3>Lack of Awareness on Government Schemes</h3>
+      <p>Many fishers miss out on benefits due to limited information about available programs.</p>
+     <a href="problems.html" class="light-btn">Read More</a>
+    </div>
+    <div class="problem-card">
+      <h3>Declining Fish Stocks</h3>
+      <p>Overfishing and environmental changes lead to reduced fish availability and lower income.</p>
+      <a href="problems.html" class="light-btn">Read More</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LATEST GOVERNMENT SCHEMES ===== -->
+<section id="govt-schemes" class="updates" data-aos="fade-up">
+  <div class="container">
+    <h2>Latest Government Schemes</h2>
+    <div class="scheme-grid">
+      <div class="scheme-card">
+        <h3>Pradhan Mantri Matsya Sampada Yojana (PMMSY)</h3>
+        <p>A comprehensive scheme to promote sustainable fishing and provide subsidies to fishers.</p>
+        <a href="https://nfdb.gov.in/welcome/PMMSY" target="_blank" class="light-btn">Learn More</a>
+      </div>
+      <div class="scheme-card">
+        <h3>Kisan Credit Card for Fishers</h3>
+        <p>Enables fishers to access affordable credit for equipment, fuel, and repairs.</p>
+       <a href="https://dof.gov.in/schemes/kisan-credit-card" target="_blank" class="light-btn">Learn More</a>
+      </div>
+      <div class="scheme-card">
+        <h3>Insurance Scheme for Fishermen</h3>
+        <p>Offers financial assistance to fishers and their families in case of accidents.</p>
+        <a href="https://nfdb.gov.in/welcome/GAIS" target="_blank" class="light-btn">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
 </main>
 
 <footer>
     <div class="container" style="display:flex;justify-content:space-between;gap:18px;align-items:center">
       <div>
         <div style="font-weight:700">Aquaculture Aid</div>
-        <div style="color:rgba(255,255,255,0.85);font-size:13px;margin-top:6px">Helping farmers with practical solutions.</div>
+        <div style="color:rgba(255,255,255,0.85);font-size:13px;margin-top:6px">Helping fishers with practical solutions.</div>
       </div>
-      <div style="display:flex;gap:12px;align-items:center">
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
-        <a href="#contact">Contact</a>
-      </div>
+<div style="color:rgba(255,255,255,0.7);font-size:12px">
+      © 2025 Aquaculture Aid. All rights reserved.
     </div>
   </footer>
 
-<!-- Join modal -->
-<div id="joinModal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <strong>Join Aquaculture Community</strong>
-      <button class="close-btn" onclick="closeJoin()">✕</button>
-    </div>
-    <p style="margin:0 0 12px;color:var(--muted)">Sign up to ask questions, post experiences, and get local help.</p>
-    <input id="joinName" placeholder="Your name" />
-    <input id="joinEmail" placeholder="Email address" />
-    <button class="cta" style="width:100%" onclick="submitJoin()">Join Now</button>
-  </div>
-</div>
-
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000, 
+    once: false    
+  });
+</script>
 <script src="js/script.js"></script>
+
 </body>
 </html>

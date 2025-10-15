@@ -5,106 +5,155 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Community — Aquaculture Aid</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Join WhatsApp Button */
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #25D366; /* WhatsApp green */
+      color: white;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 10px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .cta:hover {
+      background-color: #1ebe57;
+    }
+    .wa-icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* Section headings */
+    .section-head h2 {
+      margin-bottom: 6px;
+      font-size: 20px;
+      color: #003366;
+    }
+    .section-head .small {
+      font-size: 14px;
+      color: rgba(0,0,0,0.6);
+      margin-bottom: 18px;
+    }
+
+    /* Discussion list */
+    .discussion-list {
+      margin-top: 20px;
+    }
+    .discussion-item {
+      background: #ffffff;
+      border: 1px solid #e0e0e0;
+      padding: 14px 16px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      text-decoration: none;
+      color: #003366;
+      display: block;
+      font-size: 15px;
+      transition: 0.2s;
+    }
+    .discussion-item:hover {
+      background: #1976d2;
+      color: white;
+      border-color: #1976d2;
+    }
+    .btn-search {
+  background-color:  #0b76d1;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  padding: 6px 16px;
+  height: 30px;
+  width: 75px; /* adjust to match screenshot */
+  cursor: pointer;
+}
+
+  .btn-search:hover {
+    background-color: #0b76d1;
+  }
+  </style>
 </head>
 <body>
 
 <header>
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo">AQ</div>
-        <div>
-          <div style="font-size:15px">Aquaculture Aid</div>
-          <div style="font-size:12px;color:var(--muted);margin-top:2px">Community • Solutions • Resources</div>
-        </div>
-      </div>
-
-      
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="problems.html">Problems</a></li>
-          <li><a href="resources.html">Resources</a></li>
-          <li><a href="community.html">Community</a></li>
-          <li><a href="faq.html">FAQs</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    
-
-      <div class="search">
-        <input id="searchInput" placeholder="Search topics, e.g. water quality" />
-        <button class="cta" id="searchBtn">Search</button>
+  <div class="container nav">
+    <div class="brand">
+      <div class="logo">AA</div>
+      <div>
+        <div style="font-size:15px">Aquaculture Aid</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:2px">Community • Solutions • Resources</div>
       </div>
     </div>
-  </header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="problems.html">Problems</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="faq.html">FAQs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="search">
+      <input id="searchInput" placeholder="Search problems, e.g. Government schemes" />
+      <!-- keep your search CSS from style.css -->
+      <button class="btn-search" id="searchBtn">Search</button>
+    </div>
+  </div>
+</header>
 
 <main class="container">
 <section id="community">
-      <div class="section-head">
-        <h2>Community & Success Stories</h2>
-        <div class="small">Real farmers, real change</div>
-      </div>
 
-      <div class="community">
-        <div>
-          <div class="story">
-            <div style="font-weight:700;margin-bottom:8px">Before & After: Water Quality Fix</div>
-            <div class="testimonial">"We used simple aeration and saw survival rates go from 65% to 92% in one cycle." — Raju, Farmer</div>
-          </div>
+  <!-- Join WhatsApp Community -->
+  <div id="join-community">
+    <div class="section-head">
+      <h2>Join the Community</h2>
+      <div class="small">Join the community to ask questions, Share your problems,Connect with others.</div>
+    </div>
+    <a href="https://chat.whatsapp.com/I1qltG70TYV1ztAnBj8rRA" target="_blank" class="cta">
+      <svg class="wa-icon" xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24">
+        <path d="M20.52 3.478A11.883 11.883 0 0 0 12 .001C5.373.001.001 5.373.001 12a11.84 11.84 0 0 0 1.872 6.254L0 24l5.834-1.882A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12 0-3.194-1.247-6.187-3.48-8.522zM12 21.992c-2.01 0-3.903-.576-5.504-1.566l-.392-.237-3.465 1.118 1.145-3.371-.256-.394A9.944 9.944 0 0 1 2 12c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10zm5.447-7.174c-.274-.137-1.623-.804-1.875-.896-.252-.092-.436-.137-.62.137-.182.274-.7.896-.858 1.08-.158.182-.316.205-.59.068-.274-.137-1.157-.427-2.202-1.354-.814-.725-1.362-1.622-1.521-1.896-.158-.274-.017-.422.12-.559.123-.123.274-.316.412-.474.137-.158.182-.274.274-.458.092-.182.046-.342-.023-.479-.068-.137-.62-1.494-.85-2.048-.224-.537-.452-.463-.62-.472-.158-.008-.342-.01-.523-.01-.182 0-.479.068-.731.342-.252.274-.963.941-.963 2.297s.986 2.664 1.123 2.847c.137.182 1.941 2.962 4.709 4.15.658.284 1.169.454 1.567.581.658.21 1.258.181 1.73.11.527-.079 1.623-.662 1.853-1.303.23-.641.23-1.19.161-1.303-.068-.113-.252-.182-.527-.316z"/>
+      </svg>
+      Join Our WhatsApp Community
+    </a>
+  </div>
 
-          <div style="height:12px"></div>
+  <!-- Discussions Section -->
+  <div class="section-head"><br></div>
+    <h2>Discussions</h2>
+    <div class="small">Click a topic to view or participate in the discussion</div>
+  </div>
 
-          <div class="story">
-            <div style="font-weight:700;margin-bottom:8px">Low-cost Feed Mix</div>
-            <div class="testimonial">"By switching to a locally blended feed, our feed conversion ratio improved." — Meena, Farmer</div>
-          </div>
-        </div>
-
-        <aside>
-          <div class="story" style="margin-bottom:12px">
-            <div style="font-weight:700;margin-bottom:6px">Join the Forum</div>
-            <div class="small">Ask questions, post tips, and get local contacts.</div>
-            <div style="margin-top:10px"><button class="cta" onclick="openJoin()">Join Now</button></div>
-          </div>
-
-          <div class="story">
-            <div style="font-weight:700;margin-bottom:6px">Newsletter</div>
-            <div class="small">Get monthly best-practices for ponds and feeds.</div>
-            <div style="margin-top:8px"><input id="newsEmail" placeholder="Email address" style="padding:8px;border-radius:8px;border:1px solid rgba(10,30,50,0.06);width:100%" /><div style="margin-top:8px"><button class="btn-outline" onclick="subscribe()">Subscribe</button></div></div>
-          </div>
-        </aside>
-      </div>
-    </section>
+  <div class="discussion-list">
+    <a href="pond.html" class="discussion-item">Pond Water Quality Improvement</a>
+    <a href="pond.html" class="discussion-item">Sustainable Feed Practices</a>
+    <a href="pond.html" class="discussion-item">Government Schemes & Support</a>
+    <a href="pond.html" class="discussion-item">Disease Management in Fish</a>
+    <a href="pond.html" class="discussion-item">Aquaculture Equipment Tips</a>
+  </div>
+</section>
 </main>
 
 <footer>
-    <div class="container" style="display:flex;justify-content:space-between;gap:18px;align-items:center">
-      <div>
-        <div style="font-weight:700">Aquaculture Aid</div>
-        <div style="color:rgba(255,255,255,0.85);font-size:13px;margin-top:6px">Helping farmers with practical solutions.</div>
-      </div>
-      <div style="display:flex;gap:12px;align-items:center">
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
-        <a href="#contact">Contact</a>
-      </div>
+  <div class="container" style="display:flex;justify-content:space-between;gap:18px;align-items:center">
+    <div>
+      <div style="font-weight:700">Aquaculture Aid</div>
+      <div style="color:rgba(255,255,255,0.85);font-size:13px;margin-top:6px">Helping farmers with practical solutions.</div>
     </div>
-  </footer>
-
-<!-- Join modal -->
-<div id="joinModal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <strong>Join Aquaculture Community</strong>
-      <button class="close-btn" onclick="closeJoin()">✕</button>
+   <div style="color:rgba(255,255,255,0.7);font-size:12px">
+      © 2025 Aquaculture Aid. All rights reserved.
     </div>
-    <p style="margin:0 0 12px;color:var(--muted)">Sign up to ask questions, post experiences, and get local help.</p>
-    <input id="joinName" placeholder="Your name" />
-    <input id="joinEmail" placeholder="Email address" />
-    <button class="cta" style="width:100%" onclick="submitJoin()">Join Now</button>
   </div>
-</div>
-
-<script src="js/script.js"></script>
+  <script src="js/community.js"></script>
+</footer>
 </body>
 </html>

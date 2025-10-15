@@ -1,98 +1,229 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Resources — Aquaculture Aid</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Resources — Aquaculture Aid</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <div class="brand">
+          <div class="logo">AA</div>
+          <div>
+            <div style="font-size: 15px">Aquaculture Aid</div>
+            <div style="font-size: 12px; color: var(--muted); margin-top: 2px">
+              Community • Solutions • Resources
+            </div>
+          </div>
+        </div>
 
-<header>
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo">AQ</div>
-        <div>
-          <div style="font-size:15px">Aquaculture Aid</div>
-          <div style="font-size:12px;color:var(--muted);margin-top:2px">Community • Solutions • Resources</div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="problems.html">Problems</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="search">
+          <input
+            id="searchInput"
+            placeholder="Search Problems, e.g. Governement schemes"
+          />
+          <button class="cta" id="searchBtn">Search</button>
         </div>
       </div>
+    </header>
 
-      
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="problems.html">Problems</a></li>
-          <li><a href="resources.html">Resources</a></li>
-          <li><a href="community.html">Community</a></li>
-          <li><a href="faq.html">FAQs</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    
-
-      <div class="search">
-        <input id="searchInput" placeholder="Search topics, e.g. water quality" />
-        <button class="cta" id="searchBtn">Search</button>
-      </div>
+    <main class="container">
+  <section id="resources">
+    <div class="section-head">
+      <h2>Resources & Official Links</h2>
+      <div class="small">Training, grants, and useful reading</div>
     </div>
-  </header>
 
-<main class="container">
-<section id="resources">
-      <div class="section-head">
-        <h2>Resources & Official Links</h2>
-        <div class="small">Training, grants, and useful reading</div>
+    <div class="cards" id="resourcesGrid">
+      <!-- National Schemes -->
+      <div class="card">
+        <h3>Government Subsidy Programs</h3>
+        <p>Information about financial support schemes for small-scale aquaculture.</p>
+        <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2152976" target="_blank">Visit Site</a>
       </div>
 
-      <div class="cards" id="resourcesGrid">
-        <div class="card">
-          <h3>Government Subsidy Programs</h3>
-          <p>Information about financial support schemes for small-scale aquaculture.</p>
-          <a href="#">Learn More</a>
-        </div>
-        <div class="card">
-          <h3>NGO Support</h3>
-          <p>Organizations that provide training and field support to farmers.</p>
-          <a href="#">Learn More</a>
-        </div>
-        <div class="card">
-          <h3>Training Videos</h3>
-          <p>Step-by-step farming techniques and pond management tutorials.</p>
-          <a href="#">Watch</a>
-        </div>
+      <div class="card" id="andhra pradesh-fisheries">
+        <h3>Department of Fisheries, Andhra Pradesh</h3>
+        <p>Official government resources and support for fishers.</p>
+        <a href="https://fisheries.ap.gov.in/" target="_blank">Visit Site</a>
+      </div>
+
+      <div class="card" id="telangana-fisheries">
+        <h3>Department of Fisheries, Telangana</h3>
+        <p>Official fisheries department portal for Telangana state.</p>
+        <a href="https://fisheries.telangana.gov.in/" target="_blank">Visit Site</a>
+      </div>
+
+      <div class="card" id="east godavari-fisheries">
+        <h3>East Godavari Fisheries Department</h3>
+        <p>Local resources and support for aquaculture in East Godavari district.</p>
+        <a href="https://eastgodavari.ap.gov.in/fisheries-department/" target="_blank">Visit Site</a>
+      </div>
+
+      <div class="card" id="west godavari-fisheries">
+        <h3>West Godavari Fisheries Department</h3>
+        <p>Local resources and support for aquaculture in West Godavari district.</p>
+        <a href="https://westgodavari.ap.gov.in/fisheries/" target="_blank">Visit Site</a>
+      </div>
+
+      <div class="card" id="krishna-fisheries">
+        <h3>Krishna District Fisheries Department</h3>
+        <p>Local resources and support for aquaculture in Krishna district.</p>
+        <a href="https://krishna.ap.gov.in/fisheries/" target="_blank">Visit Site</a>
+      </div>
+
+      <div class="card" id="nfdp">
+        <h3>National Fisheries Department Portal</h3>
+        <p>Central government portal with links to all state fisheries departments.</p>
+        <a href="https://dof.gov.in/state-fisheries-department-websites" target="_blank">Visit Site</a>
+      </div>
+
+      <!-- PMMSY & Other National Schemes -->
+      <div class="card" id="pmmsy">
+        <h3>Pradhan Mantri Matsya Sampada Yojana (PMMSY)</h3>
+        <p>Flagship scheme for fisheries infrastructure, insurance, and financial assistance.</p>
+        <a href="https://pmmsy.dof.gov.in/" target="_blank">Visit Site</a>
+      </div>
+
+      <div class="card" id="kisan-credit-card">
+        <h3>Kisan Credit Card (KCC) for Fishermen</h3>
+        <p>Enables fishers to access institutional credit for working capital and operations.</p>
+        <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=1625225" target="_blank">Visit Site</a>
+      </div>
+
+      <div class="card" id="blue revolution-scheme">
+        <h3>Blue Revolution Scheme</h3>
+        <p>Integrated development and management of fisheries to enhance production.</p>
+        <a href="https://dof.gov.in/blue-revolution" target="_blank">Visit Site</a>
+      </div>
+
+      <div class="card" id="fidf">
+        <h3>Fisheries and Aquaculture Infrastructure Development Fund (FIDF)</h3>
+        <p>Provides concessional finance for creation of fisheries infrastructure.</p>
+        <a href="https://dof.gov.in/fidf" target="_blank">Visit Site</a>
+      </div>
+
+      <div class="card" id="welfare-fishermen">
+        <h3>National Scheme of Welfare of Fishermen</h3>
+        <p>Group accident insurance, savings-cum-relief, and housing support.</p>
+        <a href="https://dof.gov.in/national-scheme-of-welfare-of-fishermen" target="_blank">Visit Site</a>
+      </div>
+
+      <div class="card" id="rkvy">
+        <h3>Rashtriya Krishi Vikas Yojana (RKVY) – Fisheries</h3>
+        <p>Financial support to states for development of fisheries infrastructure.</p>
+        <a href="https://rkvy.nic.in/" target="_blank">Visit Site</a>
+      </div>
+
+      <div class="card" id="ffda">
+        <h3>Fish Farmers Development Agency (FFDA)</h3>
+        <p>Training, subsidies, and technical assistance to fish farmers.</p>
+        <a href="https://dof.gov.in" target="_blank">Visit Site</a>
+      </div>
+
+      <!-- Andhra Pradesh Schemes -->
+      <div class="card" id="ap matsyakara bharosa">
+        <h3>AP Matsyakara Bharosa Scheme</h3>
+        <p>Financial assistance of ₹10,000 per year to fishermen during the ban period.</p>
+        <a href="https://fisheries.ap.gov.in/MatsyakaraBharosa" target="_blank">Visit Site</a>
+      </div>
+
+      <div class="card" id="ap ysr matsyakara-nestham">
+        <h3>AP YSR Matsyakara Nestham</h3>
+        <p>Monthly pension of ₹10,000 for fishermen aged 45–60.</p>
+        <a href="https://fisheries.ap.gov.in/MatsyakaraNestham" target="_blank">Visit Site</a>
+      </div>
+
+      <div class="card" id="diesel scheme-ap">
+        <h3>Subsidized Diesel Scheme – Andhra Pradesh</h3>
+        <p>Diesel subsidy for mechanized and motorized boats.</p>
+        <a href="https://fisheries.ap.gov.in/" target="_blank">Visit Site</a>
+      </div>
+
+      <!-- Telangana Schemes -->
+      <div class="card" id="free fish seed-telangana">
+        <h3>Telangana Free Fish Seed Distribution</h3>
+        <p>Government distributes free fish seed to cooperatives for stocking reservoirs.</p>
+        <a href="https://fisheries.telangana.gov.in/" target="_blank">Visit Site</a>
+      </div>
+
+      <div class="card" id="fishing nets and boats-telangana">
+        <h3>Subsidized Fishing Nets & Boats – Telangana</h3>
+        <p>Fishermen receive subsidies on nets, boats, and equipment.</p>
+        <a href="https://fisheries.telangana.gov.in/" target="_blank">Visit Site</a>
+      </div>
+
+      <div class="card" id="insurance">
+        <h3>Group Accident Insurance for Fishermen</h3>
+        <p>Telangana provides accident insurance to registered fishermen families.</p>
+        <a href="https://fisheries.telangana.gov.in/" target="_blank">Visit Site</a>
+      </div>
+
+      <!-- NGOs & Training -->
+      <div class="card" id="ngo">
+        <h3>NGO Support</h3>
+        <p>Organizations that provide training and field support to fishers.</p>
+        <a href="http://www.siffs.org/Home">Visit Site</a>
       </div>
     </section>
-</main>
-
-<footer>
-    <div class="container" style="display:flex;justify-content:space-between;gap:18px;align-items:center">
-      <div>
-        <div style="font-weight:700">Aquaculture Aid</div>
-        <div style="color:rgba(255,255,255,0.85);font-size:13px;margin-top:6px">Helping farmers with practical solutions.</div>
-      </div>
-      <div style="display:flex;gap:12px;align-items:center">
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </footer>
-
-<!-- Join modal -->
-<div id="joinModal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <strong>Join Aquaculture Community</strong>
-      <button class="close-btn" onclick="closeJoin()">✕</button>
-    </div>
-    <p style="margin:0 0 12px;color:var(--muted)">Sign up to ask questions, post experiences, and get local help.</p>
-    <input id="joinName" placeholder="Your name" />
-    <input id="joinEmail" placeholder="Email address" />
-    <button class="cta" style="width:100%" onclick="submitJoin()">Join Now</button>
+      <section id="training">
+  <div class="section-head">
+    <h2>Training for Modern Fishing Techniques</h2>
+    <div class="small">Learn modern fishing methods, aquaculture, and post-harvest handling</div>
   </div>
-</div>
 
+  <div class="cards" id="trainingGrid">
+    <div class="card" id="training">
+      <h3>Aquaculture Training Playlist</h3>
+      <p>Step-by-step tutorials on fish farming and pond management.</p>
+      <a href="https://www.youtube.com/playlist?list=PLf9TRlweVhWnJbLk0ICVf9_N67KrCdyut" target="_blank">Watch Videos</a>
+    </div>
+
+    <div class="card" id="channel">
+      <h3>Mahipal Fisheries Channel</h3>
+      <p>Modern fishing techniques, equipment usage, and tips for fishers.</p>
+      <a href="https://www.youtube.com/@MahipalFisheries1" target="_blank">Watch Video</a>
+    </div>
+
+    <div class="card" id="tutorial">
+      <h3>GPS & Sonar Tutorial</h3>
+      <p>Learn to use GPS and fish-finding devices efficiently.</p>
+      <a href="https://www.youtube.com/watch?v=3UTY3yIzBG4" target="_blank">Watch Video</a>
+    </div>
+
+    <div class="card" id="post-harvest-techniques">
+      <h3>Post-Harvest Handling Techniques</h3>
+      <p>Improve fish quality and reduce losses after catch.</p>
+      <a href="https://www.youtube.com/watch?v=Woz5FZbPyhE" target="_blank">Watch Video</a>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="container" style="display:flex;justify-content:space-between;gap:18px;align-items:center">
+    <div>
+      <div style="font-weight:700">Aquaculture Aid</div>
+      <div style="color:rgba(255,255,255,0.85);font-size:13px;margin-top:6px">Helping farmers with practical solutions.</div>
+    </div>
+    <div style="color:rgba(255,255,255,0.7);font-size:12px">
+      © 2025 Aquaculture Aid. All rights reserved.
+    </div>
+  </div>
+</footer>
 <script src="js/script.js"></script>
-</body>
+  </body>
 </html>
